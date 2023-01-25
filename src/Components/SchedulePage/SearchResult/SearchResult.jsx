@@ -24,14 +24,6 @@ const SearchResult = () => {
         modalDispatch({type:actions.REQUEST_LOADER});
       },1000)
     }
-    else if(searchState.searchResult?.appointments.length == 0)
-    {
-      alert("No Data found !!!")
-    }
-    else
-    {
-      alert("Showing Results from 0, No Prev Data found !!!")
-    }
   }
 
   const handleNextData=()=>
@@ -45,13 +37,6 @@ const SearchResult = () => {
         handleSearch({...searchState.searchInput,offSet:searchState.searchInput.offSet+5},searchDispatch,searchActions,modalDispatch,actions);
         modalDispatch({type:actions.REQUEST_LOADER});
       },1000)
-    }
-    else if(searchState.searchResult?.appointments.length == 0){
-      alert("No Data found !!!")
-    }
-    else
-    {
-      alert("Showing final results, No Next Data found !!!")  
     }
   }
   const handleGoBack=()=>

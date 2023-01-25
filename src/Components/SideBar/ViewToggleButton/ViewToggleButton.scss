@@ -4,11 +4,11 @@
     display: $display-property;
     background: $background-color;
     box-shadow: $box-shadow;
-    border-radius: 20px;
+    border-radius: $border-radius;
     padding: 2px;
   
     .btn {
-      border-radius: 20px;
+      border-radius: $border-radius;
       display: $display-property;
       justify-content: $align-item;
       width: 103px;

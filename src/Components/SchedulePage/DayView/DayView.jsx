@@ -8,17 +8,22 @@ import { actions } from "../../../Reducer/ModalReducer";
 import GetCurrTimeStyle from "../../../Utils/CurrTimeStyle";
 import GetTimeLineEvents from "../../../Utils/TimeLineSeparator";
 import GetAppointments from "../../../Utils/Appointments";
+import Gettemp from "../../../Utils/temp";
 
 const DayView = () => {
 
-  const {appointments,setTimeStamp,modalDispatch,calendarState,} = useContext(GlobalContext);
+  const {appointments,setTimeStamp,modalDispatch,calendarState,monthView} = useContext(GlobalContext);
   const [scroll, setScroll] = useState(false);
   const scrollRef = useRef();
 
   const CURRENT_DATE = dayjs(new Date(calendarState.currYearIndex, calendarState.currMonthIndex, calendarState.currDayIndex) );
-  const selectedDateAppointments=GetAppointments(appointments,CURRENT_DATE);
-  console.log(selectedDateAppointments);
+  // console.log(appointments,"hi");
+  const selectedDateAppointments=GetAppointments(appointments,CURRENT_DATE,monthView);
+  // const selectedDateAppointments=Gettemp(appointments,CURRENT_DATE,monthView);
+  // console.log(selectedDateAppointments,"has");
+  
   const timeLineData=GetTimeLineEvents(selectedDateAppointments,CURRENT_DATE);
+  // console.log(timeLineData,"sfd");
   const currTimeStyle=GetCurrTimeStyle();
   const today=dayjs();
   const arrayOfTime = GetHour();
@@ -33,7 +38,12 @@ const DayView = () => {
       .format("YYYY-MM-DDTHH:mm");
     const timeStamp = { startTime, endTime };
     setTimeStamp(timeStamp);
-    modalDispatch({ type: actions.ADD_EVENT });
+    // console.log(hour,CURRENT_DATE)
+    // if(hour.hour()<=CURRENT_DATE.hour())
+    // {
+      modalDispatch({ type: actions.ADD_EVENT });
+    // }
+    
   };
 
   const handleScroll = () => {

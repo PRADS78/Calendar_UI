@@ -14,7 +14,7 @@ const GetTimeLineEvents = (appointments, CURRENT_DATE) => {
         const hourDuration = endTime - startTime;
         const minutesDuration = endTimeMinutes - startTimeMinutes;
         const TotalDuration = hourDuration + minutesDuration;
-        console.log(TotalDuration,endTime);
+        // console.log(TotalDuration,endTime,startTime,appointmentStartTime, appointmentEndTime);
         return { TotalDuration: TotalDuration, top: (startTime / TOTAL_MINUTES_IN_HOUR) * HEIGHT + (startTimeMinutes / TOTAL_MINUTES_IN_HOUR) * HEIGHT };
     }
 
@@ -72,14 +72,14 @@ const GetTimeLineEvents = (appointments, CURRENT_DATE) => {
             })
         }
 
-        // else if (dayjs(event.appointmentEndTime).format("DD-MM-YY") == CURRENT_DATE.format("DD-MM-YY")) {
-        //     let totalDuration = findTotalDuration(CURRENT_DATE, dayjs(event.appointmentEndTime));
-        //     let valueFound = findHeightAndFontValue(totalDuration.TotalDuration);
-        //     eventStyle.push({
-        //         appointment: event,
-        //         appointmentCardStyle: { position: "absolute", top: totalDuration.top, height: valueFound.heightValue, fontSize: valueFound.fontValue, fontWeight: valueFound.fontWeight }, appointmentContentStyle: { paddingTop: valueFound.paddingTop }
-        //     })
-        // }
+        else if (dayjs(event.appointmentEndTime).format("DD-MM-YY") == CURRENT_DATE.format("DD-MM-YY")) {
+            let totalDuration = findTotalDuration(CURRENT_DATE, dayjs(event.appointmentEndTime));
+            let valueFound = findHeightAndFontValue(totalDuration.TotalDuration);
+            eventStyle.push({
+                appointment: event,
+                appointmentCardStyle: { position: "absolute", top: totalDuration.top, height: valueFound.heightValue, fontSize: valueFound.fontValue, fontWeight: valueFound.fontWeight }, appointmentContentStyle: { paddingTop: valueFound.paddingTop }
+            })
+        }
     }
     );
 

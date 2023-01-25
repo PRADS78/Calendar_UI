@@ -67,7 +67,7 @@
       resize: none;
       color: $font-faded-bg;
       background-color: $background-color;
-      border-radius: 50px;
+      border-radius:$border-radius;
       border: 1px solid $border-color;
       padding: 10px;
       &:focus {

@@ -14,12 +14,38 @@
   padding-bottom: 40px;
   cursor: default;
 
+
+
+  .search-go-back
+  {
+    display:$display-property;
+    align-items: $align-item;
+    padding-left: 18px;
+  }
+   .go-back
+  {
+    margin-right: 20px;
+    padding-top: 4px;
+    font-size: 20px;
+    cursor: $cursor-pointer;
+    &:hover
+    {
+      color: $hover-color;
+    }
+  }
+  .search-go-back-text {
+    color: #000000;
+    font-size: 25px;
+    font-weight:500;
+
+  }
+
   .search-result-head
   {
     margin-right: 30px;
     cursor: $cursor-pointer;
-    padding-left: 18px;
-    font-size: 25px;
+    
+    font-size: 28px;
     font-weight: 600;
     letter-spacing: 1px;
     height: 50px;
@@ -30,6 +56,7 @@
   {
     display: $display-property;
     align-items: $align-item;
+    padding-right: 18px;
 
     .search-icon
     {
@@ -46,4 +73,10 @@
     }
   }
 
+}
+
+.nav-search-style
+{
+  padding-top: 18px;
+  padding-bottom: 35px;
 }

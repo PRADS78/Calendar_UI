@@ -9,8 +9,8 @@
   border: 1px solid $border-color;
   background: $background-color;
   display: flex;
-  height: 80vh;
-  padding-bottom: 2px;
+  height: 82vh;
+  padding-bottom: 14px;
   border-radius: 20px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -24,20 +24,11 @@
     border-bottom: 1px solid $border-color;
   }
 
-  .search-go-back
-  {
-    display:$display-property;
-    align-items: $align-item;
-  }
-   .go-back
-  {
-    margin-right: 20px;
-    cursor: $cursor-pointer;
-  }
+
   .search-head-text {
     color: #000000;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 500;
   }
   .search-buttons {
     display: $display-property; 

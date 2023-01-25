@@ -2,8 +2,9 @@
 
 .summary-container
 {
-    margin-top: 32px;
-    font-size: 12px;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 500;
     border-radius: 20px;
     width: 180px;
     padding: 15px;
@@ -45,6 +46,7 @@
         {
             letter-spacing: 1px;
             font-weight: 500;
+            font-size: 12px;
         }
     }
 }
