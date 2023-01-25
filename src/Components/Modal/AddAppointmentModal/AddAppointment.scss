@@ -1,0 +1,141 @@
+@import "../../ReUsableStyles/_mixin.scss";
+@import "../../ReUsableStyles/variable.scss";
+.create-pop-up-overlay {
+  @include overlay;
+
+  .create-pop-up-box {
+    @include popupBox;
+    width: 35%;
+    align-items: stretch;
+  }
+
+  .create-header {
+    @include popupHeader;
+    justify-content:$space-between ;
+    padding: 15px 20px;
+    padding-top: 20px;
+
+    .add-appointment
+    {
+      padding-left: 10px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .create-faXmark {
+    @include popupHeaderIcons;
+  }
+  .create-txt {
+    padding-top: 10px;
+    font-size: 15px;
+  }
+
+  .create-popup-btns {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: 40px;
+    display:$display-property;
+    justify-content: end;
+    align-items: flex-end;
+    .cancel-btn-create {
+      margin-right: 20px;
+    }
+  }
+}
+
+.create-event-content {
+  padding-left: 30px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $border-color;
+  .event {
+    width: 100%;
+    display: $display-property;
+    align-items: $align-item;
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+    span
+    {
+      color: #454a45;
+    }
+
+    .add-input {
+      width: 75%;
+      box-sizing: border-box;
+      resize: none;
+      color: $font-faded-bg;
+      background-color: $background-color;
+      border-radius: 50px;
+      border: 1px solid $border-color;
+      padding: 10px;
+      &:focus {
+        outline: none;
+        border: 2px solid $hover-color;
+      }
+    }
+  }
+
+  .input-label {
+    font-size: 13px;
+    font-weight: 600;
+    width: 75px;
+    padding-right: 20px;
+    color: #454a45;
+  }
+
+  .choose-time {
+    display: $display-property;
+    align-items: $align-item;
+    padding-top: 20px;
+
+    .time-sel-style {
+      padding: 5px 10px;
+      border-radius: $border-radius;
+      border: 1px solid $border-color;
+      color: $font-faded-bg;
+      font-size: 14px;
+    }
+  }
+
+  
+
+  .input-text-area {
+    // margin-top: 25px;
+    width: 70%;
+    color: $font-faded-bg;
+    font-family: sans-serif;
+    resize: none;
+    
+    background-color: $background-color;
+    padding: 0px 10px;
+    padding-top: 10px;
+    padding-bottom:35px ;
+    border-radius:$border-radius;
+    margin-top: 10px;
+    border: 1px solid $border-color;
+
+    &:focus {
+      outline: none;
+      border: 2px solid $hover-color;
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: $border-color;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      margin-right: 1px;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: $hover-color;
+    }
+    
+  }
+}

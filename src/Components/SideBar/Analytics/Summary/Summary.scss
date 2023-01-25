@@ -1,0 +1,73 @@
+@import "../../../ReUsableStyles/variable.scss";
+
+.summary-container
+{
+    margin-top: 32px;
+    font-size: 12px;
+    border-radius: 20px;
+    width: 180px;
+    padding: 15px;
+    cursor: default;
+    display: $display-property;
+    flex-direction: $flex-direction;
+    align-items:$align-item;
+    border: 1px solid $border-color;
+    // box-shadow: $box-shadow;
+
+    &:hover
+    {
+        border: 1px solid $hover-color;
+        .summary-title
+        {
+            color: $hover-color;
+        }
+        .summary-content
+        {
+            color: $hover-color;
+        }
+    }
+
+    .summary-head
+    {
+        padding-bottom: 5px;
+        display: $display-property;
+        align-items: $align-item;
+      
+        .summary-icon
+        {
+            width:20px;
+            padding: 5px;
+
+            border-radius: 20px;
+            margin-right: 5px;
+        }
+        .summary-title
+        {
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+    }
+}
+
+// .total-hours
+// {
+//     // box-shadow:1px 1px 5px #b1b1b1 ;
+//     background-image: linear-gradient(to bottom right,#c59fff,#ffffff);
+// }
+
+// .total-appointments
+// {
+//     background-image: linear-gradient(to bottom right,#c59fff,#ffffff);
+// }
+// .average-hours
+// {
+//     background-image: linear-gradient(to bottom right,#c59fff,#ffffff);
+// }
+// .appointments-left
+// {
+//     background-image: linear-gradient(to bottom right,#c59fff,#ffffff);
+// }
+// .appointments-over
+// {
+//     background-image: linear-gradient(to bottom right,#c59fff,#ffffff);
+// }

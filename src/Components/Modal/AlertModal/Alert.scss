@@ -1,0 +1,26 @@
+@import "../../ReUsableStyles/mixin.scss";
+@import "../../ReUsableStyles/variable.scss";
+
+.alert-pop-up-overlay {
+  @include overlay;
+
+  .alert-pop-up-box {
+    @include popupBox;
+    width: 26%;
+  }
+  
+  .alert-txt {
+    padding-top: 45px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .alert-popup-btns {
+    padding-top: 25px;
+    padding-bottom: 20px;
+    display: $display-property;
+
+    .alert-cancel-btn {
+      padding-right: 20px;
+    }
+  }
+}

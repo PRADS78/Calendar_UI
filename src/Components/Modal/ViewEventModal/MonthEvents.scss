@@ -1,0 +1,95 @@
+@import "../../ReUsableStyles/_mixin.scss";
+@import "../../ReUsableStyles/variable.scss";
+
+.month-view-pop-up-overlay {
+  @include overlay;
+
+  .month-view-pop-up-box {
+    @include popupBox;
+    width: 25%;
+    align-items:normal;
+    border-radius: $border-radius;
+  }
+
+  .month-view-event-head
+  {
+    display: $display-property;
+    justify-content: $space-between;
+    align-items: $align-item;
+    padding: 15px 30px;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .month-view-event-title{
+
+    display: $display-property;
+    justify-content: $align-item;
+    align-items: $align-item;
+    font-size: 15px;
+    letter-spacing: 1px;
+    // padding:15px 0px;
+   
+    img
+    {
+      width: 25px;
+      padding-top:2px;
+      padding-right: 20px;
+    }
+  }
+
+  .month-view-create-btn
+  {
+    cursor: $cursor-pointer;
+    padding:6px 7px ;
+    border-radius: $border-radius;
+    &:hover
+    {
+      color:$background-color;
+      background-color:$hover-color ;
+    }
+  }
+
+
+  .month-view-event-content {
+    position: relative;
+    &:hover
+    {
+        cursor:default;
+    }
+    font-size: 14px;
+
+    .month-view-event-body
+    {
+        height: 40vh;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        &::-webkit-scrollbar-track {
+          background-color: $border-color;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+          border-radius: 5px;
+          background-color: $hover-color;
+    
+        }
+      .month-view-appointment
+      {
+        margin: 0px 5px;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+      }
+    }
+  }
+
+  .month-view-event-popup-btn {
+    padding: 20px;
+    border-top: 1px solid $border-color;
+    display:$display-property;
+    justify-content: flex-end;
+  }
+}

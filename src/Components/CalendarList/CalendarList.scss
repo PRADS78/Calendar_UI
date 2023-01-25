@@ -1,0 +1,26 @@
+@import "../ReUsableStyles/variable.scss";
+
+.cal-list-panel
+{
+    position: $position-fixed;
+    display: $display-property;
+    flex-direction: $flex-direction;
+    box-shadow: $box-shadow;
+    top:0px;
+    right: 0;
+    z-index: 0;
+    margin-right: 15px;
+    margin-top: 15px;
+    padding:10px;
+    padding-bottom: 14px;
+    padding-top: 26px;
+    width: 18%;
+    border-radius:$border-radius;
+
+    .event-btn{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+
+    }
+}

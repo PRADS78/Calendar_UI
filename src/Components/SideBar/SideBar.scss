@@ -1,0 +1,43 @@
+@import "../ReUsableStyles/variable.scss";
+
+.side-bar-parent {
+  position: $position-fixed;
+  top:0;
+  left: 0;
+  margin-left: 15px;
+  margin-top: 15px;
+  width: 15%;
+  border-radius:$border-radius;
+  padding: 15px;
+  padding-bottom: 22px;
+  display: $display-property;
+  flex-direction: $flex-direction;
+  align-items: $align-item;
+  box-shadow: $box-shadow;
+
+  .app-header {
+    display: $display-property;
+    align-items: $align-item;
+    padding-bottom: 30px;
+    cursor: default;
+
+    .app-icon {
+      width: 45px;
+      margin-left: 5px;
+      padding-top: 3px;
+      padding-right: 10px;
+    }
+    .app-title {
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+  }
+
+  .side-bar-content {
+    display: $display-property;
+    align-items: $align-item;
+    flex-direction: $flex-direction;
+  }
+}
+

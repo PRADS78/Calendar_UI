@@ -1,0 +1,147 @@
+@import "../../ReUsableStyles/mixin.scss";
+@import "../../ReUsableStyles/variable.scss";
+
+
+.search-result {
+  position: relative;
+  cursor: default;
+  // width: 100%;
+  border: 1px solid $border-color;
+  background: $background-color;
+  display: flex;
+  height: 80vh;
+  padding-bottom: 2px;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  flex-direction: $flex-direction;
+
+  .search-header {
+    display:$display-property;
+    justify-content: $space-between;
+    align-items:$align-item;
+    padding: 20px 50px;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .search-go-back
+  {
+    display:$display-property;
+    align-items: $align-item;
+  }
+   .go-back
+  {
+    margin-right: 20px;
+    cursor: $cursor-pointer;
+  }
+  .search-head-text {
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .search-buttons {
+    display: $display-property; 
+    width: 150px;
+    justify-content: flex-end;
+
+
+    .next-btn{
+      @include buttonStyle;
+      padding: 10px 20px;
+      background-color: #000000;
+      color: $background-color;
+    
+      &:hover {
+        @include buttonHover;
+        // background-color: #000000;
+      }
+    }
+    
+    .previous-btn{
+      @include buttonStyle;
+      padding: 10px 20px;
+      margin-right: 20px;
+      background-color: #000000;
+      color: $background-color;
+    
+    
+      &:hover {
+        @include buttonHover;
+        
+      }
+    }
+
+    .next-not-active
+    {
+      background-color:#545454;
+      color: #b7b7b7;
+      &:hover{
+        background-color:#545454;
+        color: #b7b7b7;
+        
+      }
+    }
+
+    .prev-not-active
+    {
+      background-color:#545454;
+      color: #b7b7b7;
+      &:hover{
+        background-color:#545454;
+        color: #b7b7b7;
+        
+      }
+    }
+
+    .search-previous-btn{
+      margin-right: 20px;
+    }
+  }
+
+  .search-result-content {
+    position: relative;
+    overflow-y: scroll;
+    padding: 15px 25px;
+    padding-bottom: 0px;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      margin-top: 15px;
+      margin-bottom: 15px
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: $hover-color;
+    }
+    .no-data-found {
+      display:$display-property;
+      flex-direction: $flex-direction;
+      // justify-content: $align-item;
+      align-items: center;
+      .no-data-text
+      {
+      padding-top: 30px;
+      color: $font-faded-bg;
+      font-size: 20px;
+      }
+
+      .no-data-img
+      {
+        padding-top: 20px;
+        width: 100px;
+      }
+
+    }
+
+    .search-results
+    {
+      margin: 0px 5px;
+      box-shadow: $box-shadow;
+      border-radius: $border-radius;
+    }
+  
+  }
+}

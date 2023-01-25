@@ -1,0 +1,58 @@
+@import "../ReUsableStyles/variable.scss";
+
+.appointment-details-card-container {
+  background-image: $linear-gradient;
+  border-radius: $border-radius;
+  font-size: 10px;
+  margin-bottom: 20px;
+  cursor: $cursor-pointer;
+  padding: 20px;
+  border: 1px solid transparent;
+
+  &:hover {
+    color: $hover-color;
+    border: 1px solid;
+    .appointment-row-1 {
+      .appointment-title {        
+          background-color: $hover-color;
+      }
+    }
+  }
+
+  .appointment-row-1 {
+    display: $display-property;
+    padding-bottom: 25px;
+    align-items: $align-item;
+    justify-content: $space-between;
+    .appointment-title {
+      font-size: 13px;
+      width: max-content;
+      max-width: 25%;
+      background-color: $background-font-style-color;
+      color: $background-color;
+      padding: 3px 10px;
+      border-radius: 10px;
+      white-space: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      letter-spacing: 1px;
+    }
+
+  }
+
+  .appointment-row-2 {
+    display: $display-property;
+    justify-content: $space-between;
+  }
+
+  .appointment-desc {
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.appointment-timestamp
+{
+  font-weight: 500;
+}

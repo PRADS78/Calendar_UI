@@ -1,0 +1,13 @@
+@import "../ReUsableStyles/variable.scss";
+
+.schedule-page-parent
+{
+    position:$position-fixed;
+    top:0px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    left: 297px;
+    width: 59%;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+}

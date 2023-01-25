@@ -1,0 +1,40 @@
+@import "../../ReUsableStyles/variable.scss";
+@import "../../ReUsableStyles/mixin.scss";
+
+//style for ellipsis
+.ellipsis-icon {
+  position: relative;
+  cursor: $cursor-pointer;
+  padding:2px 6px;
+  border-radius: 50px;
+  &:hover {
+    color: $background-color;
+    background-color: $hover-color;
+  }
+}
+.ellipsis-options {
+  position: absolute;
+  margin-top: 8px;
+  margin-left: 0px;
+  z-index: 100;
+  box-shadow: $box-shadow;
+  width: 70px;
+  display:$display-property;
+  flex-direction: $flex-direction;
+  
+  .btn {
+    transition: 0.2s linear;
+    cursor:$cursor-pointer;
+    font-size: 12px;
+    padding: 8px;
+    background-color: $background-color;
+    border: none;
+    &:hover {
+      color: $background-color;
+      background-color: $hover-color;
+    }
+  }
+  .edit {
+    padding-right: 15px;
+  }
+}

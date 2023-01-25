@@ -1,0 +1,36 @@
+@import "../../ReUsableStyles/variable.scss";
+  
+  .two-view-btn {
+    display: $display-property;
+    background: $background-color;
+    box-shadow: $box-shadow;
+    border-radius: 20px;
+    padding: 2px;
+  
+    .btn {
+      border-radius: 20px;
+      display: $display-property;
+      justify-content: $align-item;
+      width: 103px;
+      padding: 6px 0px;
+      font-size: 15px;
+      &:hover
+      {
+        color:$background-color;
+        background-color:$hover-color ;
+        cursor:$cursor-pointer;
+      }
+    }
+
+    .month-clr
+    {
+      background-color:$black-color;
+      color:$background-color;
+    }
+    .day-clr
+    {
+      background-color: $black-color;
+      color:$background-color;
+    }
+  }
+  

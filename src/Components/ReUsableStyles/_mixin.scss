@@ -1,0 +1,103 @@
+@import "../ReUsableStyles/variable.scss";
+
+//modal reusable styles
+@mixin overlay
+{
+    background: #38373780;
+    position: $position-fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    left: 0;
+    display: $display-property;
+    justify-content: $align-item;
+    align-items: $align-item;
+    z-index: 100;
+}
+
+@mixin popupBox
+{
+    
+    display: $display-property;
+    flex-direction: $flex-direction;
+    align-items: $align-item;
+    border-radius: $border-radius;
+    background: $background-color;
+    box-shadow:0px 5px 10px #4a4a4a;
+    @include popupAnimation;
+    
+}
+
+@mixin popupHeader
+{
+    box-sizing: border-box;
+    padding: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $border-color;
+    width: 100%;
+    align-items: $align-item;
+    display: $display-property;
+    justify-content: flex-end;
+
+}
+
+@mixin popupAnimation
+{
+    animation: show 0.5s ease-in-out;
+    @keyframes show {
+        from{         
+      transform: scale(0);
+        } 
+        to{
+      transform: scale(1);            
+        }
+      }
+}
+
+@mixin popupHeaderIcons
+{
+    cursor: $cursor-pointer;
+    border-radius: 50px;
+    font-size: 13px;
+    padding: 5px 8px;
+    border: 1px solid;
+    margin-right:10px;
+    &:hover {
+      color: $background-color;
+      background-color: $hover-color;
+    }
+}
+
+
+//button style
+@mixin buttonStyle {
+    cursor: $cursor-pointer;
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    font-size: 14px;
+    border-radius: $border-radius;
+  }
+
+@mixin buttonHover
+{
+    background-color: $background-font-style-color;
+    color: $background-color;
+}
+
+
+@mixin navButton
+{
+    border: none;
+    padding: 3px 5px;
+    margin-left: 18px;
+    font-size: 10px;
+    border-radius: 25px;
+    color: $hover-color;
+    background-color: #e1dbf9;
+    cursor: $cursor-pointer;
+    &:hover
+    {
+      color: $background-color;
+      background-color: $background-font-style-color;
+    }
+}

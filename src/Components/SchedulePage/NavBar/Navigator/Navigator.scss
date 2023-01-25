@@ -1,0 +1,29 @@
+@import "../../../ReUsableStyles/variable.scss";
+@import "../../../ReUsableStyles/mixin.scss";
+
+  .nav-parent {
+    .curr-day
+    {
+      font-size: 25px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      padding-bottom: 5px;
+    }
+
+    .current-day-nav
+    {
+      display: $display-property;
+      justify-content:$space-between;
+      align-items: $align-item;
+      letter-spacing: 1px;
+      width: 240px;
+      .navigator
+      {
+        padding-bottom: 2px;
+        button {
+            @include navButton
+        }
+      }
+    }
+
+  }

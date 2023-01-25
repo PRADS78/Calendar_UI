@@ -1,0 +1,75 @@
+@import "../../ReUsableStyles/variable.scss";
+
+.upcoming-event-container
+{
+    padding-top: 30px; 
+    // border-top: 1px solid $border-color;
+    .upcoming-header
+    {
+    display: $display-property;
+    justify-content: $space-between;
+    padding-bottom: 15px; 
+    padding-left: 8px;
+
+    .header-name
+    {
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .view-all-option
+    {
+        font-size: 12px; 
+        color: $hover-color;
+        margin-right: 8px;
+        &:hover{
+            cursor: $cursor-pointer;
+            color: $background-font-style-color;
+        }  
+    }
+   }
+}
+
+.upcoming-events
+{
+    overflow-y: scroll;
+    padding-top: 10px;
+    border-radius: 20px;
+    height: 248px;
+    .upcoming-each-event
+    {
+        margin: 0px 5px;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+    }
+
+    .no-schedule
+    {
+        display: $display-property;
+        flex-direction: $flex-direction;
+        align-items: $align-item;
+        color: $font-faded-bg;
+        img
+        {
+            padding-top: 10px;
+            width: 80px;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: $hover-color;
+      }
+
+
+}
