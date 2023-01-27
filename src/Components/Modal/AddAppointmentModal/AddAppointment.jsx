@@ -12,6 +12,7 @@ import { handleUpdate} from "../../../ApiHandler/HandleUpdate";
 import { handlePost } from "../../../ApiHandler/HandlePost";
 import Alert from "../AlertModal/Alert";
 import { DiscardButton } from "../../Buttons/Buttons";
+import dayjs from "dayjs";
 
 
 const AddAppointment = () => {
@@ -102,6 +103,11 @@ const AddAppointment = () => {
     if(appointment.title.replace(/\s/g,"")!=="")
     {
       const titleSpaces=appointment.title.replace(/\s+/g, " ").trim()
+      if(dayjs(appointment.endTime).diff(appointment.startTime,'minutes')<5)
+      {
+        modalDispatch({type:actions.SET_ERROR_RESPONSE,payload:"Cannot schedule meeting with duration below 5 minutes "})
+        return;
+      }
       const eventSubmitted={
         appointmentTitle:titleSpaces,
         appointmentDescription:appointment.description.replace(/\s+/g, " ").trim(),

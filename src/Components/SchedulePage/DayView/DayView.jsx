@@ -20,7 +20,7 @@ const DayView = () => {
   const timeLineData=GetTimeLineEvents(appointments,CURRENT_DATE);
   let currTimeStyle=GetCurrTimeStyle();
   const today=dayjs();
-  const arrayOfTime = GetHour();
+  const arrayOfTime = GetHour(CURRENT_DATE);
 
 
   useEffect(() => {
