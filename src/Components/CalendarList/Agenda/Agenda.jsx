@@ -35,7 +35,7 @@ const UpcomingEvents = () => {
       <div className="upcoming-event-container">
           <div className="upcoming-header">
               <div className="header-name" title="upcoming-appointments">
-                Upcoming Events {upcomingEvents?.length>0&&upcomingEvents.length} - ({monthView?"month":"day"})
+                Upcoming Events {upcomingEvents?.length>0&&(`(${upcomingEvents.length})`)} - ({monthView?"month":"day"})
               </div>
               <div className="view-all-option" onClick={() => setViewAll(!viewAll)} title={`${viewAll?"Close":"View-all Appointments"}`}>
                 {upcomingEvents?.length > 2 ? (viewAll ? "Close" : "View-all") : " "}

@@ -57,13 +57,16 @@ const GetTimeLineEvents = (appointments, CURRENT_DATE) => {
         return { fontValue: fontValue, heightValue: heightValue, fontWeight: fontWeight, paddingTop: paddingTop };
     }
 
+
+
     for(var i=0;i<appointments.length;i++)
     {
         let totalDuration = findTotalDuration(dayjs(appointments[i].appointmentStartTime), dayjs(appointments[i].appointmentEndTime));
-            let valueFound = findHeightAndFontValue(totalDuration.TotalDuration);
-            eventStyle.push({
-                appointment: appointments[i],
-                appointmentCardStyle: {position: "absolute", top: totalDuration.top, height: valueFound.heightValue, fontSize: valueFound.fontValue, fontWeight: valueFound.fontWeight }, appointmentContentStyle: { paddingTop: valueFound.paddingTop }
+        let valueFound = findHeightAndFontValue(totalDuration.TotalDuration);
+        eventStyle.push({
+            appointment: appointments[i],
+            appointmentCardStyle: {position: "absolute", top: totalDuration.top, height: valueFound.heightValue, fontSize: valueFound.fontValue, fontWeight: valueFound.fontWeight }, 
+            appointmentContentStyle: { paddingTop: valueFound.paddingTop }
             })
     }
     return eventStyle;
