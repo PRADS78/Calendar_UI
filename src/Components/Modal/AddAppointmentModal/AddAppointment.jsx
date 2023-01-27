@@ -76,11 +76,18 @@ const AddAppointment = () => {
 
   const handleCancel=()=>
   {
-    if(appointment.title.length>0&&modalState.updateEvent==null)
+    if((appointment.title.length>0
+          ||appointment.startTime!=timeStamp.startTime
+            ||appointment.endTime!=timeStamp.endTime
+              ||appointment.description.length>0)
+                &&modalState.updateEvent==null)
     {
       setDiscard(true)
     }
-    else if((modalState.updateEvent!==null)&&(appointment.title.length>0&&appointment.title.length!==modalState.updateEvent.appointmentTitle.length))
+    else if((modalState.updateEvent!==null)
+          &&((appointment.title.length>0&&appointment.title.length!==modalState.updateEvent.appointmentTitle.length)
+            ||(appointment.description.length>0&&appointment.description.length!==modalState.updateEvent.appointmentDescription.length)
+              ||(appointment.startTime!==modalState.updateEvent.appointmentStartTime)||(appointment.endTime!==modalState.updateEvent.appointmentEndTime)))
     {
       setDiscard(true)
     }

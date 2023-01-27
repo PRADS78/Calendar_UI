@@ -5,16 +5,10 @@ import "./Agenda.scss";
 import GetUpcomingEvents from "../../../Utils/UpcomingEvents";
 import { actions } from "../../../Reducer/ModalReducer";
 import NoSchedule from "../../../Assests/Icons/NoSchedule.svg";
-import dayjs from "dayjs";
-import {GetAppointments} from "../../../Utils/Appointments";
-
 
 const UpcomingEvents = () => {
-  const { modalDispatch, appointments,calendarState,monthView} = useContext(GlobalContext);
+  const { modalDispatch, appointments,monthView} = useContext(GlobalContext);
   
-  const CURRENT_DATE = dayjs(new Date(calendarState.currYearIndex, calendarState.currMonthIndex, calendarState.currDayIndex) );
-  
-  // const selectedDateAppointments=GetAppointments(appointments,CURRENT_DATE,monthView); 
   // var [upcomingEvents,setUpcomingEvents]=useState({});
   const upcomingEvents=GetUpcomingEvents(appointments);
   const [viewAll, setViewAll] = useState(false);
@@ -42,6 +36,8 @@ const UpcomingEvents = () => {
               </div>
           </div>
       </div>
+
+      
       <div className="upcoming-events">
         {
         upcomingEvents?.length>0?

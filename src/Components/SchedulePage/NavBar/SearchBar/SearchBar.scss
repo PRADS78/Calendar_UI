@@ -29,7 +29,6 @@
     align-items: $align-item;
     box-shadow: $box-shadow;
     background-color: $background-color;
-    padding-left: 5px;
 
     button
     {
@@ -43,7 +42,7 @@
       border: none;
       border-radius: $border-radius;
       padding: 11px;
-      padding-left: 15px;
+      padding-left: 10px;
 
       &:focus {
         outline: none;
@@ -81,7 +80,8 @@
       color: $font-faded-bg;
       font-size: 15px;
       padding: 5px;
-      padding-right: 10px;
+      padding-top: 8px;
+      padding-left: 12px;
       border-radius: $border-radius;
       &:hover{
         color: $background-font-style-color;
@@ -93,11 +93,12 @@
   .search-with-options {
     cursor: default;
     box-shadow: $box-shadow;
-    width: 99%;
+    width: 100%;
     display: $display-property;
     flex-direction: $flex-direction;
     position: absolute;
     top:40px;
+    margin-left: 0px;
     font-size: 14px;
     color: $font-faded-bg;
     background-color: $background-color;
