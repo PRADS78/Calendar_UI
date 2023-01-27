@@ -7,8 +7,6 @@ import Appointment from "../../AppointmentCard/Appointment";
 import { actions } from "../../../Reducer/ModalReducer";
 import GetCurrTimeStyle from "../../../Utils/CurrTimeStyle";
 import GetTimeLineEvents from "../../../Utils/TimeLineSeparator";
-// import GetAppointments from "../../../Utils/Appointments";
-import { GetAppointments } from "../../../Utils/Appointments";
 
 
 const DayView = () => {
