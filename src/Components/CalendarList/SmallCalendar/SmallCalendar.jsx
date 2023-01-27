@@ -4,12 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faChevronLeft,faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import "./SmallCalendar.scss";
 import GlobalContext from "../../../Context/GlobalContext";
-import { calendarActions } from "../../../Reducer/CalendarReducer";
-import GetMonth from "../../../Utils/Month";
+import {GetDayColour, GetMonth,HandleSelectedDay} from "../../../Utils/Calendar";
 
 const SmallCalendar = () => {
   const {calendarDispatch,calendarState} = useContext(GlobalContext);
-  const [selectedDay, setselectedDay] = useState(dayjs());
+  const [selectedDay, setSelectedDay] = useState(dayjs());
   const [currYear, setCurrYear] = useState(dayjs().year());
   const [currMonth, setCurrMonth] = useState(dayjs().month());  
   const [daysOfCurrMonth, setDaysOfCurrMonth] = useState(GetMonth());
@@ -29,43 +28,6 @@ const SmallCalendar = () => {
 
   const handleNextMonth = () => {
     setCurrMonth(currMonth + 1);
-  };
-
-  const handleSelectedDay = (day) => {
-      if (calendarState.currMonthIndex !== day.month()) {
-        calendarDispatch({type:calendarActions.SET_CURR_YEAR,payload:day.year()})
-        calendarDispatch({type:calendarActions.SET_CURR_MONTH,payload:day.month()})
-      }
-      
-      if(day===selectedDay)
-      {setselectedDay("")}
-      else{ 
-        setselectedDay(day);
-        calendarDispatch({type:calendarActions.SET_CURR_DAY,payload:day.date()})}
-  };
-
-  const getDayClass = (day) => {
-    const format = "DD-MM-YY";
-    const today = dayjs().format(format);
-    const receivedDay = day.format(format);
-    const fadeDay = dayjs(new Date(currYear, currMonth));
-
-    if (today === receivedDay) {
-      return "curr-day-bg";
-    } 
-    else if (
-      selectedDay&&
-      day.date() === calendarState.currDayIndex&&
-      day.month() === calendarState.currMonthIndex
-    ) {
-      return "other-day-bg";
-    } 
-    else if (fadeDay.month() !== day.month()) {
-      return "faded-bg";
-    } 
-    else {
-      return "";
-    }
   };
 
   return (
@@ -103,9 +65,9 @@ const SmallCalendar = () => {
             <Fragment key={index}>
               {row.map((day, index) => (
                 <button
-                  className={`days ${getDayClass(day)}`}
+                  className={`days ${GetDayColour(day,selectedDay,calendarState,{currYear:currYear,currMonth:currMonth})}`}
                   onClick={() => {
-                    handleSelectedDay(day);
+                    HandleSelectedDay(day,calendarDispatch,calendarState,selectedDay,setSelectedDay);
                   }}
                   key={index}
                   title={`${day.format("DD-MM-YYYY")}`}

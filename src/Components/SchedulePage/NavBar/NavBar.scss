@@ -2,7 +2,6 @@
 @import "../../ReUsableStyles/mixin.scss";
 
 .nav-bar {
-  // box-shadow: $box-shadow;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
   background-color: $background-color;
@@ -11,7 +10,7 @@
   align-items: $align-item;
   padding: 0px 30px;
   padding-top: 18px;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   cursor: default;
 
 
@@ -21,12 +20,14 @@
     display:$display-property;
     align-items: $align-item;
     padding-left: 18px;
+    height: 42px;
   }
    .go-back
   {
     margin-right: 20px;
     padding-top: 4px;
     font-size: 20px;
+    // height: 30px;
     cursor: $cursor-pointer;
     &:hover
     {
@@ -40,23 +41,14 @@
 
   }
 
-  .search-result-head
-  {
-    margin-right: 30px;
-    cursor: $cursor-pointer;
-    
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    height: 50px;
-    padding-top: 10px;
-  }
+
 
   .right-nav
   {
     display: $display-property;
     align-items: $align-item;
     padding-right: 18px;
+    
 
     .search-icon
     {
@@ -77,6 +69,7 @@
 
 .nav-search-style
 {
-  padding-top: 18px;
-  padding-bottom: 35px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+

@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-const GetEachDayAppointment = (daysOfCurrMonth, appointments) => {
+const GetMonthViewAppointment = (daysOfCurrMonth, appointments) => {
 
     const appointmentsSeparated = []
     {
@@ -10,9 +10,13 @@ const GetEachDayAppointment = (daysOfCurrMonth, appointments) => {
                 appointments.map((event) => {
                     if (dayjs(event.appointmentStartTime).format("DD-MM-YY") === day.format("DD-MM-YY")) 
                     { eachDay.push(event) }
+                    else if((dayjs(event.appointmentStartTime).format("DD-MM-YY") === day.format("DD-MM-YY")))
+                    {
+                        eachDay.push(event) 
+                    }
                 })
                 if (eachDay.length > 0) {
-                    appointmentsSeparated.push({ date: day, events: eachDay, key: day.format("DD") });
+                    appointmentsSeparated.push({ date: day, events: eachDay });
                 }
             }
             )
@@ -21,4 +25,4 @@ const GetEachDayAppointment = (daysOfCurrMonth, appointments) => {
     return appointmentsSeparated;
 }
 
-export default GetEachDayAppointment;
+export default GetMonthViewAppointment;

@@ -1,4 +1,4 @@
-import { UpdateAppointment } from "../Network/AppointmentAPI";
+import { UpdateAppointment } from "./Network/AppointmentAPI";
 
 export const handleUpdate = async (updateInput, modalDispatch, monthView, handleGetByDate, handleGetByMonth, actions) => {
 
@@ -12,10 +12,13 @@ export const handleUpdate = async (updateInput, modalDispatch, monthView, handle
   }
   catch (error) {
     if (error.response) {
+      if(error.response.data.status===(409||400||404))
+      {
       modalDispatch({
         type: actions.SET_ERROR_RESPONSE,
         payload: error.response.data.errorMessage,
       });
+    }
     }
     else
       console.log(`Error: ${error.message}`);

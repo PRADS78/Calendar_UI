@@ -3,7 +3,6 @@
 .upcoming-event-container
 {
     padding-top: 30px; 
-    // border-top: 1px solid $border-color;
     .upcoming-header
     {
     display: $display-property;
@@ -13,14 +12,14 @@
 
     .header-name
     {
-        font-size: 14px;
+        font-size: 11px;
         font-weight: bold;
         letter-spacing: 1px;
     }
 
     .view-all-option
     {
-        font-size: 12px; 
+        font-size: 10px; 
         color: $hover-color;
         margin-right: 8px;
         &:hover{

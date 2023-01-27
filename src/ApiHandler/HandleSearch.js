@@ -1,4 +1,4 @@
-import { SearchAppointment } from "../Network/AppointmentAPI";
+import { SearchAppointment } from "./Network/AppointmentAPI";
 
 export const handleSearch = async (searchInput, searchDispatch, searchActions) => {
   try {

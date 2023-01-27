@@ -11,8 +11,8 @@ const DisplayResult = ({searchState}) => {
             <div><img src={NoResult} alt="No Result" className="no-data-img"/></div>
             </div>
         ) : (
-          searchState.searchResult?.appointments.map((event, index) => (
-            <div key={index} className="search-results">
+          searchState.searchResult?.appointments.map((event) => (
+            <div key={event.appointmentId} className="search-results">
               <AppointmentDetails event={event} />
             </div>
           ))

@@ -3,7 +3,6 @@ import SchedulePage from "../SchedulePage/SchedulePage";
 import CalendarList from "../CalendarList/CalendarList";
 import Modal from "./Modal";
 import SideBar from "../SideBar/SideBar";
-import "./Scheduler.scss";
 import { useContext } from "react";
 import GlobalContext from "../../Context/GlobalContext";
 import { actions } from "../../Reducer/ModalReducer";
@@ -11,8 +10,9 @@ import useGetApi from "../../ApiHandler/HandleGet";
 
 
 const Scheduler = () => {
-  const { modalDispatch, calendarState,monthView} = useContext(GlobalContext);
+  const { modalDispatch, calendarState,monthView,appointments,setAppointments} = useContext(GlobalContext);
   const {handleGetByDate,handleGetByMonth}=useGetApi();
+  
 
   //get by date
   useEffect(() => {
@@ -35,8 +35,9 @@ const Scheduler = () => {
         modalDispatch({ type: actions.REQUEST_LOADER });
       }, 1000);
     }
-  }, [monthView == true, calendarState.currMonthIndex]);
+  }, [calendarState.currMonthIndex,monthView == true]);
 
+  
   return (
     <>
       <SideBar />

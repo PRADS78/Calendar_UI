@@ -5,7 +5,7 @@
     margin-top: 30px;
     font-size: 14px;
     font-weight: 500;
-    border-radius: 20px;
+    border-radius: $border-radius;
     width: 180px;
     padding: 15px;
     cursor: default;
@@ -13,8 +13,7 @@
     flex-direction: $flex-direction;
     align-items:$align-item;
     border: 1px solid $border-color;
-    // box-shadow: $box-shadow;
-
+    
     &:hover
     {
         border: 1px solid $hover-color;

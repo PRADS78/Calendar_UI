@@ -31,7 +31,7 @@ const Navigator = () => {
         <div className="nav-parent">
         <div className="curr-day">
         {monthView?currDate.format("MMMM")+"'s Schedule"
-        :currDate.format("dddd")+"'s Schedule"
+        :((currDate.format("DD-MM-YY")===dayjs().format("DD-MM-YY")?"Today":currDate.format("dddd"))+"'s Schedule")
         }
         </div>
 

@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import GetMonth from "../Utils/Month";
+import {GetMonth} from "../Utils/Calendar";
 
 export const calendarInitialState = {
     currYearIndex: dayjs().year(),

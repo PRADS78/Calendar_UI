@@ -5,13 +5,12 @@
 .search-result {
   position: relative;
   cursor: default;
-  // width: 100%;
   border: 1px solid $border-color;
   background: $background-color;
   display: flex;
   height: 82vh;
-  padding-bottom: 14px;
-  border-radius: 20px;
+  padding-bottom: 19px;
+  border-radius: $border-radius;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   flex-direction: $flex-direction;
@@ -20,7 +19,7 @@
     display:$display-property;
     justify-content: $space-between;
     align-items:$align-item;
-    padding: 20px 50px;
+    padding: 20px 38px;
     border-bottom: 1px solid $border-color;
   }
 

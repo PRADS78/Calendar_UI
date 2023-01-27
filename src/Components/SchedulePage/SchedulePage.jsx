@@ -19,9 +19,10 @@ const SchedulePage = () => {
 
       <div className="schedule-page-parent">
         <NavBar/>
+        
         {(!search&&monthView)?<MonthView />
         :(!search&&<DayView />)}
-        
+
         {search&&<SearchResult/>}
       </div>
 

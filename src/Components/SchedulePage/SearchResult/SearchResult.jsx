@@ -48,6 +48,10 @@ const SearchResult = () => {
       modalDispatch({type:actions.REQUEST_LOADER});
     },800)
   }
+  
+  
+  
+  
   return (
     <div className="search-result">
       <SearchNav searchState={searchState} handleGoBack={handleGoBack} handlePreviousData={handlePreviousData} handleNextData={handleNextData} />

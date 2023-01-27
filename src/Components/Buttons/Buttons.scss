@@ -4,21 +4,17 @@
 
 //style for create button
 .create-btn{
-  cursor: $cursor-pointer;
-  display: $display-property;
-  justify-content: $align-item;
-  align-items: $align-item;
+  @include buttonStyle;
   font-size: 16px;
   border: none;
   color: $background-color;
-  // background-color:$background-font-style-color;
-    background-color: $hover-color;
+  background-color: $hover-color;
   padding: 10px 18px;
-  width: 140px;
-  border-radius: $border-radius;
+  width: 135px;
+
   &:hover {
     @include buttonHover;
-    background-color: #000
+    background-color: $black-color;
   }
 
 }
@@ -85,11 +81,11 @@
 //style for today Button
 .today-btn {
   @include buttonStyle;
-  background-color:#000;
+  background-color:$black-color;
   color: $background-color;
   font-size: 16px;
   box-shadow: none;
-  width: 125px;
+  width: 120px;
   padding: 10px 18px;
   &:hover {
     @include buttonHover;

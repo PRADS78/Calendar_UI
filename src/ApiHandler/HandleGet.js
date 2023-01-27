@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import dayjs from "dayjs";
 import GlobalContext from "../Context/GlobalContext";
-import { GetByDate, GetByMonth } from "../Network/AppointmentAPI";
+import { GetByDate, GetByMonth } from "./Network/AppointmentAPI";
 
 const useGetApi = () => {
   const { calendarState, setAppointments } = useContext(GlobalContext)
@@ -11,7 +11,7 @@ const useGetApi = () => {
     {
       offSet: 0, fetchCount: -1,
       startDate: dayjs(new Date(calendarState.currYearIndex, calendarState.currMonthIndex, calendarState.currDayIndex)).format("YYYY-MM-DD"),
-      endDate: dayjs(new Date(calendarState.currYearIndex, calendarState.currMonthIndex, calendarState.currDayIndex + 1)).format("YYYY-MM-DD")
+      endDate: dayjs(new Date(calendarState.currYearIndex, calendarState.currMonthIndex, calendarState.currDayIndex)).format("YYYY-MM-DD")
     }
     try {
       const getByDateresponse = await GetByDate(getByDateInput);
@@ -46,7 +46,7 @@ const useGetApi = () => {
         .format("YYYY-MM-DD"),
     };
     try {
-      const getByMonthResponse = await GetByDate(getByMonthInput);
+      const getByMonthResponse = await GetByMonth(getByMonthInput);
       if (getByMonthResponse.status === 200) {
         setAppointments(getByMonthResponse.data.appointments);
       }

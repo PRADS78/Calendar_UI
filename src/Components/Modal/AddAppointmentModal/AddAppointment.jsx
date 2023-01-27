@@ -16,9 +16,10 @@ import { DiscardButton } from "../../Buttons/Buttons";
 
 const AddAppointment = () => {
   const { timeStamp,modalState,modalDispatch,monthView} = useContext(GlobalContext);
+  const {handleGetByDate,handleGetByMonth}=useGetApi();
   const [appointment,setAppointment]=useState({title:"",description:"",startTime:"",endTime:""})
   const [isDiscard,setDiscard]=useState(false)
-  const {handleGetByDate,handleGetByMonth}=useGetApi();
+  
 
 
   useEffect(()=>
@@ -70,8 +71,7 @@ const AddAppointment = () => {
     if(modalState.updateEvent==null)
     modalDispatch({type:actions.ADD_EVENT})
     else
-    modalDispatch({type:actions.SET_UPDATE_EVENT,payload:null})
-          
+    modalDispatch({type:actions.SET_UPDATE_EVENT,payload:null})       
   }
 
   const handleCancel=()=>
@@ -101,7 +101,6 @@ const AddAppointment = () => {
         appointmentStartTime: appointment.startTime,
         appointmentEndTime:appointment.endTime
       } 
-      console.log(eventSubmitted);
       if(modalState.updateEvent!=null)
       { 
         const event={appointmentId:modalState.updateEvent.appointmentId,eventSubmitted};

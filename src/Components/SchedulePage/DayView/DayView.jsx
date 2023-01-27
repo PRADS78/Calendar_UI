@@ -7,26 +7,30 @@ import Appointment from "../../AppointmentCard/Appointment";
 import { actions } from "../../../Reducer/ModalReducer";
 import GetCurrTimeStyle from "../../../Utils/CurrTimeStyle";
 import GetTimeLineEvents from "../../../Utils/TimeLineSeparator";
-import GetAppointments from "../../../Utils/Appointments";
-import Gettemp from "../../../Utils/temp";
+// import GetAppointments from "../../../Utils/Appointments";
+import { GetAppointments } from "../../../Utils/Appointments";
+
 
 const DayView = () => {
 
-  const {appointments,setTimeStamp,modalDispatch,calendarState,monthView} = useContext(GlobalContext);
+  const {appointments,setTimeStamp,modalDispatch,calendarState} = useContext(GlobalContext);
   const [scroll, setScroll] = useState(false);
   const scrollRef = useRef();
 
   const CURRENT_DATE = dayjs(new Date(calendarState.currYearIndex, calendarState.currMonthIndex, calendarState.currDayIndex) );
-  // console.log(appointments,"hi");
-  const selectedDateAppointments=GetAppointments(appointments,CURRENT_DATE,monthView);
-  // const selectedDateAppointments=Gettemp(appointments,CURRENT_DATE,monthView);
-  // console.log(selectedDateAppointments,"has");
   
-  const timeLineData=GetTimeLineEvents(selectedDateAppointments,CURRENT_DATE);
-  // console.log(timeLineData,"sfd");
-  const currTimeStyle=GetCurrTimeStyle();
+  const timeLineData=GetTimeLineEvents(appointments,CURRENT_DATE);
+  let currTimeStyle=GetCurrTimeStyle();
   const today=dayjs();
   const arrayOfTime = GetHour();
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      currTimeStyle=GetCurrTimeStyle()
+    },1000);
+    return () => clearInterval(interval);
+  });
 
   const handleCreateModal = (hour) => {
     const currDate = CURRENT_DATE;
@@ -38,11 +42,8 @@ const DayView = () => {
       .format("YYYY-MM-DDTHH:mm");
     const timeStamp = { startTime, endTime };
     setTimeStamp(timeStamp);
-    // console.log(hour,CURRENT_DATE)
-    // if(hour.hour()<=CURRENT_DATE.hour())
-    // {
+    console.log(hour,CURRENT_DATE,today)
       modalDispatch({ type: actions.ADD_EVENT });
-    // }
     
   };
 
@@ -74,8 +75,8 @@ const DayView = () => {
             {today.format("DD-MM-YY")===CURRENT_DATE.format("DD-MM-YY")&&<div className="curr-time" style={currTimeStyle}></div>}
             {arrayOfTime.map((hour, index) => (<div className={`timeline ${hour.format("H")=="23"&&"add-container-bottom"}`} key={index} onClick={() => handleCreateModal(hour)}></div>))}
             <div>
-              {timeLineData?.map((event, index) => (
-                <div key={index} onClick={() => {modalDispatch({type:actions.SET_VIEW_EVENT,payload:event.appointment})}}className="day-view-appointment-card">
+              {timeLineData?.map((event) => (
+                <div key={event.appointment.appointmentId} onClick={() => {modalDispatch({type:actions.SET_VIEW_EVENT,payload:event.appointment})}}className="day-view-appointment-card">
                   <Appointment event={event} />
                 </div>
               ))}

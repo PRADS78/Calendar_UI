@@ -1,7 +1,7 @@
 import { useContext} from "react";
 import React from "react";
 import { CloseButton } from "../../Buttons/Buttons";
-import "./MonthEvents.scss";
+import "./ViewAllAppointment.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import GlobalContext from "../../../Context/GlobalContext";
@@ -12,7 +12,7 @@ import AppointmentDetails from "../../AppointmentCard/AppointmentDetails";
 
 import { createPortal } from "react-dom";
 
-const MonthEvent = ({today,appointment,setShowAppointment}) => {
+const ViewAllAppointment= ({today,appointment,setShowAppointment}) => {
   const {modalDispatch } = useContext(GlobalContext);
   return createPortal(
     <>
@@ -27,16 +27,12 @@ const MonthEvent = ({today,appointment,setShowAppointment}) => {
               {appointment?.date.date()>=today.date()&&<FontAwesomeIcon title="create-event" icon={faPlus} className="month-view-create-btn" onClick={()=>{modalDispatch({type:actions.ADD_EVENT})}}/>}
               
               </div>
-
-
-
               <div className="month-view-event-body">  
-                {appointment?.events.map((event, index) => (
+                {appointment?.events.map((event) => (
                   <div className="month-view-appointment" key={event.appointmentId} onClick={() => modalDispatch({ type: actions.SET_VIEW_EVENT, payload: event,})}>
                   <AppointmentDetails event={event}/>
                   </div>
                 ))}
-
               </div>
             </div>
 
@@ -54,4 +50,4 @@ const MonthEvent = ({today,appointment,setShowAppointment}) => {
   );
 };
 
-export default MonthEvent;
+export default ViewAllAppointment;

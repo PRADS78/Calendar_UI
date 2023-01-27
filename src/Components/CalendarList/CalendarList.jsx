@@ -1,5 +1,5 @@
 import SmallCalendar from "./SmallCalendar/SmallCalendar";
-import UpcomingEvents from "./UpcomingEvents/UpcomingEvent";
+import Agenda from "./Agenda/Agenda";
 import { CreateButton } from "../Buttons/Buttons";
 import "./CalendarList.scss";
 import { useContext,useEffect } from "react";
@@ -45,7 +45,7 @@ const CalendarList=()=> {
             </div>
         </div>    
       <SmallCalendar />
-      <UpcomingEvents/>
+      <Agenda/>
     </div>
   );
 }

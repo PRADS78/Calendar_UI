@@ -17,6 +17,14 @@ const SearchBar = ({ setIsNotSearched }) => {
   const [searchInput,setSearchInput]=useState({offSet:0,fetchCount:5,searchTitle:"",startDate:"",endDate:""})
 
   const handleSubmit = (e) => {
+    if(searchInput.endDate<searchInput.startDate)
+    {
+      modalDispatch({type:actions.SET_ERROR_RESPONSE,payload:"Please Select End Date greater than Start Date !"})   
+      setIsNotSearched(true)
+      return;
+    }
+    else
+    {
     e.preventDefault();
     const titleSpaces=searchInput.searchTitle.replace(/\s+/g," ").trim()
     setSearchInput({...searchInput,searchTitle:"",startDate:"",endDate:""})
@@ -30,6 +38,7 @@ const SearchBar = ({ setIsNotSearched }) => {
       handleSearch(searchInput,searchDispatch,searchActions,modalDispatch,actions);
       modalDispatch({type:actions.REQUEST_LOADER});
     },1000)
+  }
 }
 
 
